@@ -3,7 +3,7 @@ author: Andrew Schwartz
 title: Java Projects
 
 description: > # this means to ignore newlines until "baseurl:"
-  A community directory of projects to learn and improve Java skills
+  A community created list of projects to improve your Java skills.
 exclude:
   - Gemfile
   - Gemfile.lock

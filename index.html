@@ -25,8 +25,9 @@ layout: default
       <tr>
         {% if project.url %}
         <td><a href="{{ project.url }}">{{ project.name }}</a></td>
-        {% endif %}
+        {% else %}
         <td>{{ project.name }}</td>
+        {% endif %}
         <td>{{ project.category }}</td>
         <td>{{ project.difficulty }}</td>
         <td>{{ project.class }}</td>

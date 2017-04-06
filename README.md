@@ -1,4 +1,4 @@
-# Java Projects
+# [Java Projects](https://schwartzadev.github.io/java-projects)
 This is a community list of Java projects that beginners and experts alike can use to expanf their programming knowledge.
 
 # Contributing

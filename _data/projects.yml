@@ -1,5 +1,10 @@
 
-  - name: JSON Test
-    category: Networks
+  - name: Blackjack Game
+    category: Games
+    difficulty: 2
+    class: learning
+
+  - name: Sudoku/Tic Tac Toe Solver
+    category: Games
     difficulty: 2
     class: learning

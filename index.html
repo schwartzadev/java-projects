@@ -8,10 +8,8 @@ layout: default
 	<p>A community created list of projects to improve your Java skills.</p>
 </section>
 
-<section class="congress">
-  <h2 class="">Find Your Officials</h2>
-  <div class="container-fluid">
-  </div>
+<section class="projects">
+  <h2 class="">Projects:</h2>
 </br>
 </br>
 <div style="overflow-x:auto">
@@ -20,40 +18,24 @@ layout: default
       <td>Name</td>
       <td>Category</td>
       <td>Difficulty (1-5)</td>
+      <td>Type*</td>
     </thead>
     <tbody id="jetsContent">
       {% for project in site.data.projects %}
       <tr>
-        <td>{{ project.name }}</a></td>
+        {% if project.url %}
+        <td><a href="{{ project.url }}">{{ project.name }}</a></td>
+        {% endif %}
+        <td>{{ project.name }}</td>
         <td>{{ project.category }}</td>
         <td>{{ project.difficulty }}</td>
-<!--         {% if project.party == "R" %} {% endif %} -->
+        <td>{{ project.class }}</td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
+  </br>
+  <hr></hr>
+  <p>*Type is whether the project is an open source one that people can contribute to or if it is a small, learning project that someone would just make on their own.</p>
 </div>
 </section>
-<script type="text/javascript">
- $('#stateSearch, #allSearch').on('keyup', function(e) {
-
-   var stateFilter = $('#stateSearch').val();
-   var nameFilter = $('#allSearch').val();
-
-   var stateReg = new RegExp(stateFilter, 'i')
-   var nameReg = new RegExp(nameFilter, 'i')
-
-   $('#jetsContent').find('tr').hide().each(function() {
-     var $me = $(this);
-
-     var matchesState = $me.children('td:nth-child(3)').text().match(stateReg);
-     var matchesName = $me.children('td:nth-child(2)').text().match(nameReg);
-
-     if (matchesState && matchesName) {
-       $me.show()
-     }
-
-   })
-
- });
-</script>

@@ -1,0 +1,59 @@
+---
+# layout: default
+title: Andrew Schwartz
+layout: default
+---
+
+<section class="introduction">
+	<p>A community created list of projects to improve your Java skills.</p>
+</section>
+
+<section class="congress">
+  <h2 class="">Find Your Officials</h2>
+  <div class="container-fluid">
+  </div>
+</br>
+</br>
+<div style="overflow-x:auto">
+  <table>
+    <thead>
+      <td>Name</td>
+      <td>Category</td>
+      <td>Difficulty (1-5)</td>
+    </thead>
+    <tbody id="jetsContent">
+      {% for project in site.data.projects %}
+      <tr>
+        <td>{{ project.name }}</a></td>
+        <td>{{ project.category }}</td>
+        <td>{{ project.difficulty }}</td>
+<!--         {% if project.party == "R" %} {% endif %} -->
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+</section>
+<script type="text/javascript">
+ $('#stateSearch, #allSearch').on('keyup', function(e) {
+
+   var stateFilter = $('#stateSearch').val();
+   var nameFilter = $('#allSearch').val();
+
+   var stateReg = new RegExp(stateFilter, 'i')
+   var nameReg = new RegExp(nameFilter, 'i')
+
+   $('#jetsContent').find('tr').hide().each(function() {
+     var $me = $(this);
+
+     var matchesState = $me.children('td:nth-child(3)').text().match(stateReg);
+     var matchesName = $me.children('td:nth-child(2)').text().match(nameReg);
+
+     if (matchesState && matchesName) {
+       $me.show()
+     }
+
+   })
+
+ });
+</script>
